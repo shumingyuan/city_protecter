@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="reward">
+  <h2>专属纪念 · {{ submission.name }}</h2>
+  <p>感谢你对城市环境的守护。以下是你的纪念编号：</p>
+  <p class="token">{{ submission.token }}</p>
+  <p>你可以在纪念碑上找到你的名字，或分享这个页面给朋友。</p>
+  <p><a class="btn" href="{{ url_for('wall') }}">查看纪念碑</a></p>
+</section>
+{% endblock %} 

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+  <h2>感谢你的行动，{{ submission.name }}！</h2>
+  <p>这是属于你的专属二维码，你可以保存或分享：</p>
+  <div class="qr-wrapper">
+    <img src="{{ url_for('static', filename='rewards/' ~ qr_file) }}" alt="你的二维码">
+  </div>
+  <p>你的纪念编号：<strong>{{ submission.token }}</strong></p>
+  <p>
+    <a class="btn" href="{{ url_for('reward', token=submission.token) }}">查看你的纪念页</a>
+    <a class="btn" href="{{ url_for('wall') }}">前往纪念碑</a>
+  </p>
+</section>
+{% endblock %} 

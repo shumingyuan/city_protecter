@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero">
+  <h2>上传你的善举，领取专属纪念</h2>
+  <p>当你将垃圾妥善处理，请上传一张现场照片并留下你的名字。我们将为你生成独一无二的二维码纪念，并将你的名字刻在虚拟纪念碑上。</p>
+</section>
+
+<section class="form-section">
+  <form action="{{ url_for('submit') }}" method="post" enctype="multipart/form-data" class="upload-form">
+    <label>您的名字</label>
+    <input type="text" name="name" placeholder="例如：张三" required>
+
+    <label>上传照片（png/jpg/jpeg/gif/webp）</label>
+    <input type="file" name="photo" accept="image/*" required>
+
+    <button type="submit">提交并领取纪念</button>
+  </form>
+</section>
+{% endblock %} 

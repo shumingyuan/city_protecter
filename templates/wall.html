@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+  <h2>城市守护者纪念碑</h2>
+  {% if submissions %}
+    <ul class="wall-list">
+      {% for s in submissions %}
+        <li>
+          <div class="avatar">🌿</div>
+          <div class="meta">
+            <div class="name">{{ s.name }}</div>
+            <div class="time">{{ s.created_at.strftime('%Y-%m-%d %H:%M') }}</div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>还没有人上墙，做第一个行动的人吧！</p>
+  {% endif %}
+</section>
+{% endblock %} 
